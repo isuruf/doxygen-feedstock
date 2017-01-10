@@ -18,11 +18,7 @@ source:
 
 build:
   number: 0
-  skip: True  # [win or not py35]
-  features:
-      - vc9    # [win and py27]
-      - vc10   # [win and py34]
-      - vc14   # [win and py35]
+  skip: true  # [not py35]
 
 requirements:
   build:
@@ -35,6 +31,8 @@ requirements:
   run:
     - m4
     - libiconv
+    # Since there are no libraries no need of vc features.
+    - vs2015_runtime   # [win]
 
 test:
   commands:
